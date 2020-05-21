@@ -1,0 +1,38 @@
+﻿<Window x:Class="LibraryAppClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryAppClient"
+        mc:Ignorable="d"
+        Title="Könyvtárkezelő" Height="500" Width="850" ResizeMode="CanMinimize">
+    <Border Padding="15" Background="AliceBlue" BorderThickness="5">
+        <Grid>
+            <StackPanel Orientation="Vertical" Margin="142,74,142,49">
+                <Label Content="Az azonosítód alapján lehetőséged van lekérdezni a kikölcsönzött könyveid listáját" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border Padding="20">
+                    <StackPanel Orientation="Horizontal" Height="21" HorizontalAlignment="Center">
+                        <TextBox Name="IdBox" Text="Azonosító" TextWrapping="Wrap" Width="159" Margin="0 0 30 0"/>
+                        <Button Content="Kérd Le az adatokat" Width="130" Click="Button_Click"/>
+                    </StackPanel>
+                </Border>
+                <StackPanel Height="76" Orientation="Vertical">
+                    <Button Content="Kikölcsönözhető Könyvek Megtekintése" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Open_Avalible_Book_List"/>
+                    <Label Content="Bejelentkezés Könyvtárosként" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" FontSize="20" FontFamily="Bold"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Könyvtáros Azonosító" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox Name="Username" TextWrapping="Wrap" Width="120" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="260">
+                    <Label Content="Jelszó" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 80 0"/>
+                    <PasswordBox Name="Password" Canvas.Left="320" Canvas.Top="140" Width="120" Margin="10"/>
+                </StackPanel>
+                <Button Content="Belépés könyvtárosként" Width="143" Click="Button_Click_1"/>
+                <Label Foreground="Crimson" x:Name="AuthenticationFail" Visibility="Hidden" 
+                       Content="Nem sikerült a hitelesítés!" Width="150" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

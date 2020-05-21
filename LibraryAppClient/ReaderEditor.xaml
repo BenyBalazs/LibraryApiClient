@@ -1,0 +1,29 @@
+﻿<Window x:Class="LibraryAppClient.ReaderEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryAppClient"
+        mc:Ignorable="d"
+        Title="ReaderEditor" Height="300" Width="300"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Label Content="Olvasó Szerkesztő" Margin="96,10,96,251"/>
+        <StackPanel Orientation="Vertical" Margin="10,38,10,142">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Content="Vezetéknév: " Margin="0 0 40 0"/>
+                <TextBox Name="FirstNameBox" TextWrapping="Wrap" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Content="Keresztnév" Margin="0 0 50 0"/>
+                <TextBox Name="LastNameBox" TextWrapping="Wrap" Width="120"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Name="AddButton" Content="Hozzáad" HorizontalAlignment="Center" Margin="0,169,0,0" VerticalAlignment="Top" Width="55" Click="Add"/>
+        <Button Name="EditButton" Content="Szerkeszt" HorizontalAlignment="Left" Margin="52,190,0,0" VerticalAlignment="Top" Width="55" Click="Edit"/>
+        <Button Name="DeleteButton" Content="Töröl" HorizontalAlignment="Left" Margin="189,190,0,0" VerticalAlignment="Top" Width="55" Click="Delete"/>
+        <Label Name="FirstNameError" Visibility="Collapsed" Foreground="Crimson" Content="Nem jó a vezetéknév!" HorizontalAlignment="Left" Margin="132,23,0,0" VerticalAlignment="Top" Width="128" Height="29"/>
+        <Label Name="LastNameError" Visibility="Collapsed" Content="Nem jó a keresztnév!" Foreground="Crimson"  HorizontalAlignment="Left" Margin="136,72,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
+        <Label Name="CommitError" Visibility="Collapsed" Foreground="Crimson" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

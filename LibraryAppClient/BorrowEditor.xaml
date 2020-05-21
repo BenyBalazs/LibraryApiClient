@@ -1,0 +1,46 @@
+﻿<Window x:Class="LibraryAppClient.BorrowEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryAppClient"
+        mc:Ignorable="d"
+        Title="BorrowEditor" Height="430" Width="400"
+        Background="AliceBlue"
+        ResizeMode="CanMinimize">
+    <Canvas>
+        <StackPanel Orientation="Vertical" Canvas.Left="6">
+            <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Stretch">
+                <Label Content="Kölcsönző:" VerticalAlignment="Stretch" Width="124" Margin="10 10 100 10"/>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Label Name="CurrantBorrower" Content="Label" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                    <ComboBox Name="Borrower" HorizontalAlignment="Center" VerticalAlignment="Center" Width="124" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Stretch">
+                <Label Content="Könyv:" HorizontalAlignment="Left" VerticalAlignment="Center" Width="124" Margin="10 10 100 10"/>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Label Name="CurrantBook" Content="Label" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                    <ComboBox Name="BookToLend" HorizontalAlignment="Center" VerticalAlignment="Center" Width="124" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Stretch">
+                <Label Content="Kikölcsönzés Dátuma:" VerticalAlignment="Center" Width="124" Margin="10 10 100 10"/>
+                <DatePicker Name="StartOfBorrow" Height="28"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Stretch">
+                <Label Content="Kötelező visszavitel:" VerticalAlignment="Center" Width="124" Margin="10 10 100 10"/>
+                <DatePicker Name="DateOfDeadline" Height="26"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Name="SaveButton" Content="Mentés" Canvas.Left="40" Canvas.Top="365" Click="Save"/>
+        <Button Name="DeleteButton" Content="Törlés" Canvas.Left="319" Canvas.Top="365" Click="Delete"/>
+        <Button Name="AddButton"  Content="Hozzáadás" Canvas.Left="170" Canvas.Top="330" Click="Add"/>
+        <Label Visibility="Collapsed" Foreground="Crimson" Name="DeadlineError" Content="Label" Canvas.Left="200" Canvas.Top="225"/>
+        <Label Visibility="Collapsed" Foreground="Crimson" Name="BorrowDateError" Content="Label" Canvas.Left="200" Canvas.Top="152"/>
+        <Label Visibility="Collapsed" Foreground="Crimson" Name="BookError" Content="Label" Canvas.Left="200" Canvas.Top="74"/>
+        <Label Visibility="Collapsed" Foreground="Crimson" Name="BorrowerError" Content="Label" Canvas.Left="200"/>
+        <Label Name="BorrowerSave" Visibility="Collapsed" Content="Mentve" Foreground="Green" Canvas.Left="255"/>
+        <Label Name="BookSaved" Visibility="Collapsed" Content="Mentve" Foreground="Green" Canvas.Left="255" Canvas.Top="76"/>
+    </Canvas>
+</Window>
