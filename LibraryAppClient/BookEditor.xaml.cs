@@ -39,6 +39,9 @@ namespace LibraryAppClient
                 _book = B;
                 BookTitleTextBox.Text = _book.BookTitle;
                 AddButton.Visibility = Visibility.Collapsed;
+
+                if (_book.IsBorrowed)
+                    BorrowedLabel.Visibility = Visibility.Visible;
             }
             else
             {

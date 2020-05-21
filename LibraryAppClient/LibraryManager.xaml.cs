@@ -81,8 +81,8 @@ namespace LibraryAppClient
                 if (window.ShowDialog() ?? false)
                 {
                     LoadBorrowedBooksList();
-                    LoadBookData();
                 }
+                LoadBookData();
                 BorrowedBooksList.UnselectAll();
             }
         }
